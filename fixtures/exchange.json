@@ -1,0 +1,263 @@
+{
+  "funds": [
+    {
+      "id": "CITY",
+      "quarter": "2027-Q1",
+      "capacity": 78000
+    },
+    {
+      "id": "LAB",
+      "quarter": "2027-Q1",
+      "capacity": 51000
+    },
+    {
+      "id": "POOL",
+      "quarter": "2027-Q1",
+      "capacity": 26000
+    }
+  ],
+  "vouchers": [
+    {
+      "id": "V-1",
+      "company": "KAI",
+      "quarter": "2027-Q1",
+      "sponsors": [
+        "CITY",
+        "LAB",
+        "POOL"
+      ],
+      "use": "热模组验证"
+    },
+    {
+      "id": "V-2",
+      "company": "FEN",
+      "quarter": "2027-Q1",
+      "sponsors": [
+        "CITY",
+        "LAB"
+      ],
+      "use": "封装耐久"
+    }
+  ],
+  "plans": [
+    {
+      "id": "PLAN-1",
+      "voucher": "V-1",
+      "provider": "TERRA",
+      "lines": [
+        "LI-1",
+        "LI-2",
+        "LI-3"
+      ]
+    },
+    {
+      "id": "PLAN-2",
+      "voucher": "V-2",
+      "provider": "TERRA",
+      "lines": [
+        "LI-4",
+        "LI-5"
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "id": "LI-1",
+      "fee": 56000,
+      "self_min": 11000,
+      "exclusive": false,
+      "limits": {
+        "CITY": 35000,
+        "LAB": 35000
+      },
+      "after": []
+    },
+    {
+      "id": "LI-2",
+      "fee": 52000,
+      "self_min": 7000,
+      "exclusive": true,
+      "limits": {
+        "CITY": 45000,
+        "POOL": 26000
+      },
+      "after": [
+        "LI-1"
+      ]
+    },
+    {
+      "id": "LI-3",
+      "fee": 25000,
+      "self_min": 5000,
+      "exclusive": false,
+      "limits": {
+        "LAB": 20000
+      },
+      "after": [
+        "LI-1"
+      ]
+    },
+    {
+      "id": "LI-4",
+      "fee": 62000,
+      "self_min": 12000,
+      "exclusive": false,
+      "limits": {
+        "CITY": 40000,
+        "LAB": 32000
+      },
+      "after": []
+    },
+    {
+      "id": "LI-5",
+      "fee": 30000,
+      "self_min": 6000,
+      "exclusive": true,
+      "limits": {
+        "LAB": 24000
+      },
+      "after": [
+        "LI-4"
+      ]
+    }
+  ],
+  "approvals": [
+    {
+      "id": "A-1",
+      "plan": "PLAN-1",
+      "version": 1,
+      "fund": "CITY",
+      "lines": {
+        "LI-1": 26000,
+        "LI-2": 45000
+      },
+      "signed": "2027-01-18T08:10:00+08:00"
+    },
+    {
+      "id": "A-2",
+      "plan": "PLAN-1",
+      "version": 1,
+      "fund": "LAB",
+      "lines": {
+        "LI-1": 19000,
+        "LI-3": 20000
+      },
+      "signed": "2027-01-18T08:12:00+08:00"
+    },
+    {
+      "id": "A-3",
+      "plan": "PLAN-2",
+      "version": 2,
+      "fund": "CITY",
+      "lines": {
+        "LI-4": 38000
+      },
+      "signed": "2027-01-18T08:16:00+08:00"
+    },
+    {
+      "id": "A-4",
+      "plan": "PLAN-2",
+      "version": 1,
+      "fund": "LAB",
+      "lines": {
+        "LI-4": 12000,
+        "LI-5": 24000
+      },
+      "signed": "2027-01-18T08:17:00+08:00"
+    },
+    {
+      "id": "A-5",
+      "plan": "PLAN-1",
+      "version": 2,
+      "fund": "POOL",
+      "lines": {
+        "LI-1": 15000
+      },
+      "signed": "2027-01-18T13:00:00+08:00"
+    }
+  ],
+  "work": [
+    {
+      "id": "SAT-10",
+      "line": "LI-1",
+      "milestone": "work_done",
+      "principal": "TERRA",
+      "actor_time": "2027-01-18T10:05:00+08:00",
+      "arrived": "2027-01-18T10:11:00+08:00"
+    },
+    {
+      "id": "SAT-11",
+      "line": "LI-1",
+      "milestone": "device_accepted",
+      "principal": "PROBE-8",
+      "actor_time": "2027-01-18T10:04:00+08:00",
+      "arrived": "2027-01-18T10:30:00+08:00"
+    },
+    {
+      "id": "SAT-12",
+      "line": "LI-2",
+      "milestone": "not_started",
+      "principal": "TERRA",
+      "actor_time": "2027-01-18T11:00:00+08:00",
+      "arrived": "2027-01-18T11:00:00+08:00"
+    }
+  ],
+  "changes": [
+    {
+      "id": "CH-1",
+      "fund": "CITY",
+      "voucher": "V-1",
+      "scope": [
+        "LI-1",
+        "LI-2"
+      ],
+      "new_ceiling": 0,
+      "occurred": "2027-01-18T12:00:00+08:00"
+    },
+    {
+      "id": "CH-2",
+      "fund": "POOL",
+      "voucher": "V-1",
+      "scope": [
+        "LI-1"
+      ],
+      "new_ceiling": 15000,
+      "occurred": "2027-01-18T12:59:00+08:00"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "BK-1",
+      "transfer": "TR-70",
+      "line": "LI-1",
+      "fund": "CITY",
+      "direction": "pay",
+      "state": "received",
+      "amount": 26000,
+      "happened": "2027-01-18T11:00:00+08:00",
+      "arrived": "2027-01-18T13:20:00+08:00"
+    },
+    {
+      "id": "BK-2",
+      "transfer": "TR-71",
+      "line": "LI-2",
+      "fund": "CITY",
+      "direction": "pay",
+      "state": "rejected",
+      "amount": 45000,
+      "happened": "2027-01-18T11:45:00+08:00",
+      "arrived": "2027-01-18T12:30:00+08:00"
+    },
+    {
+      "id": "BK-3",
+      "transfer": "TR-72",
+      "line": "LI-1",
+      "fund": "CITY",
+      "direction": "refund",
+      "state": "received",
+      "amount": 6000,
+      "happened": "2027-01-18T14:10:00+08:00",
+      "arrived": "2027-01-18T14:25:00+08:00"
+    }
+  ]
+}
